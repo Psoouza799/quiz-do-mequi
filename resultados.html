@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados - Quiz Do Méqui</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="resultados.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-chart-bar"></i>
+                <h1>Resultados - Quiz Do Méqui</h1>
+            </div>
+            <div class="header-actions">
+                <button class="btn-secondary" onclick="voltarInicio()">
+                    <i class="fas fa-home"></i>
+                    Voltar ao Início
+                </button>
+            </div>
+        </header>
+
+        <main class="results-container">
+            <!-- Estatísticas Gerais -->
+            <section class="stats-section">
+                <h2>Estatísticas Gerais</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="total-participants">0</h3>
+                            <p>Participantes</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-percentage"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="average-score">0%</h3>
+                            <p>Média Geral</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="best-score">0%</h3>
+                            <p>Melhor Pontuação</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="last-attempt">-</h3>
+                            <p>Última Tentativa</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Filtros e Controles -->
+            <section class="controls-section">
+                <div class="controls-header">
+                    <h2>Resultados Detalhados</h2>
+                    <div class="controls-actions">
+                        <button class="btn-primary" onclick="exportResults()">
+                            <i class="fas fa-download"></i>
+                            Exportar
+                        </button>
+                        <button class="btn-danger" onclick="clearAllResults()">
+                            <i class="fas fa-trash"></i>
+                            Limpar Tudo
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="filters">
+                    <div class="filter-group">
+                        <label for="filter-user">Filtrar por usuário:</label>
+                        <select id="filter-user" onchange="filterResults()">
+                            <option value="">Todos os usuários</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="sort-by">Ordenar por:</label>
+                        <select id="sort-by" onchange="sortResults()">
+                            <option value="date-desc">Data (mais recente)</option>
+                            <option value="date-asc">Data (mais antigo)</option>
+                            <option value="score-desc">Pontuação (maior)</option>
+                            <option value="score-asc">Pontuação (menor)</option>
+                            <option value="name-asc">Nome (A-Z)</option>
+                            <option value="name-desc">Nome (Z-A)</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Lista de Resultados -->
+            <section class="results-list-section">
+                <div id="results-list" class="results-list">
+                    <!-- Resultados serão inseridos aqui via JavaScript -->
+                </div>
+                
+                <div id="no-results" class="no-results" style="display: none;">
+                    <div class="no-results-content">
+                        <i class="fas fa-inbox"></i>
+                        <h3>Nenhum resultado encontrado</h3>
+                        <p>Ainda não há resultados de quiz para exibir.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="resultados.js"></script>
+</body>
+</html>
+

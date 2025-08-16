@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Do Méqui</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="questionario.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <h1>Quiz Do Méqui</h1>
+            </div>
+            <div class="quiz-progress">
+                <span id="progress-text">Questão 1 de 10</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+            </div>
+        </header>
+
+        <main class="quiz-container">
+            <div class="quiz-header">
+                <h2>Quiz Do Méqui</h2>
+                <p>Selecione a alternativa correta para cada questão</p>
+            </div>
+
+            <form id="quiz-form" class="quiz-form">
+                <!-- Questão 1 -->
+                <div class="question-card">
+                    <h3 class="question-title">1. Quais sanduíches foram descontinuados do cardápio do McDonald's?</h3>
+                    <div class="options">
+                        <label class="option">
+                            <input type="checkbox" name="q1" value="a">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Big Mac e Quarterão</span>
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" name="q1" value="b" data-correct="true">
+                            <span class="checkmark"></span>
+                            <span class="option-text">McCrispy Chicken Melt&Bacon e McCrispy Chicken Elite</span>
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" name="q1" value="c">
+                            <span class="checkmark"></span>
+                            <span class="option-text">McChicken e Cheddar McMelt</span>
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" name="q1" value="d">
+                            <span class="checkmark"></span>
+                            <span class="option-text">McFish e McNuggets</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Questão 2 -->
+                <div class="question-card">
+                    <h3 class="question-title">2. Qual molho exclusivo foi descontinuado junto com os sanduíches McCrispy Chicken?</h3>
+                    <div class="options">
+                        <label class="option">
+                            <input type="checkbox" name="q2" value="a">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Molho Agridoce</span>
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" name="q2" value="b" data-correct="true">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Molho HoneyFire</span>
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" name="q2" value="c">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Molho Barbecue</span>
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" name="q2" value="d">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Molho Especial Big Mac</span>
+                        </label>
+                    </div>
+                </div>
+
+
+
+
+
+                <!-- Questão 3 -->
+                <div class="question-card">
+                    <h3 class="question-title">3. Qual o objetivo do Calendário de Recebimento anual e etiquetas de bolinhas?</h3>
+                    <div class="options">
+                        <label class="option">
+                            <input type="checkbox" name="q3" value="a">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Controlar o estoque de bebidas</span>
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" name="q3" value="b" data-correct="true">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Garantir a identificação correta dos produtos e rotação PEPS</span>
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" name="q3" value="c">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Monitorar a validade dos produtos perecíveis</span>
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" name="q3" value="d">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Registrar a entrada e saída de funcionários</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Questão 4 -->
+                <div class="question-card">
+                    <h3 class="question-title">4. Qual marca de bacon congelado os restaurantes começaram a receber, substituindo a Perdigão?</h3>
+                    <div class="options">
+                        <label class="option">
+                            <input type="checkbox" name="q4" value="a">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Seara</span>
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" name="q4" value="b" data-correct="true">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Sadia</span>
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" name="q4" value="c">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Aurora</span>
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" name="q4" value="d">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Friboi</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Questão 5 -->
+                <div class="question-card">
+                    <h3 class="question-title">5. Quais os tamanhos das fatias de bacon que podem ser encontradas em uma mesma embalagem?</h3>
+                    <div class="options">
+                        <label class="option">
+                            <input type="checkbox" name="q5" value="a">
+                            <span class="checkmark"></span>
+                            <span class="option-text">5cm e 10cm</span>
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" name="q5" value="b">
+                            <span class="checkmark"></span>
+                            <span class="option-text">10cm e 15cm</span>
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" name="q5" value="c" data-correct="true">
+                            <span class="checkmark"></span>
+                            <span class="option-text">10cm e 20cm</span>
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" name="q5" value="d">
+                            <span class="checkmark"></span>
+                            <span class="option-text">15cm e 25cm</span>
+                        </label>
+                    </div>
+                </div>
+
+
+
+                <!-- Questão 6 -->
+                <div class="question-card">
+                    <h3 class="question-title">6. Qual a novidade no processo de envio do McFlurry para McDelivery?</h3>
+                    <div class="options">
+                        <label class="option">
+                            <input type="checkbox" name="q6" value="a">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Envio em embalagens biodegradáveis</span>
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" name="q6" value="b">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Acompanhamento de colher especial</span>
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" name="q6" value="c" data-correct="true">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Todos os McFlurry devem ser enviados selados</span>
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" name="q6" value="d">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Entrega com temperatura controlada</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Questão 7 -->
+                <div class="question-card">
+                    <h3 class="question-title">7. Qual o primeiro passo para aplicar o material de "O POTENCIAL EM NOSSO McDELIVERY"?</h3>
+                    <div class="options">
+                        <label class="option">
+                            <input type="checkbox" name="q7" value="a">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Estabelecer um prazo para implementação</span>
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" name="q7" value="b" data-correct="true">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Reunir a equipe Gerencial para conhecer o material</span>
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" name="q7" value="c">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Garantir que 100% da equipe seja treinada</span>
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" name="q7" value="d">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Estabelecer o treinador por plantão</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Questão 8 -->
+                <div class="question-card">
+                    <h3 class="question-title">8. Quais são os principais KPIs afetados pela implementação do material de McDelivery?</h3>
+                    <div class="options">
+                        <label class="option">
+                            <input type="checkbox" name="q8" value="a">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Lucratividade e Satisfação do Cliente</span>
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" name="q8" value="b" data-correct="true">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Imprecisão, McExperiência e Vendas</span>
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" name="q8" value="c">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Tempo de Entrega e Custo Operacional</span>
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" name="q8" value="d">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Número de Pedidos e Avaliação do Entregador</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Questão 9 -->
+                <div class="question-card">
+                    <h3 class="question-title">9. Qual processo de operação do McDelivery envolve o "Posicionamento Reposicionamento Tablet e Função"?</h3>
+                    <div class="options">
+                        <label class="option">
+                            <input type="checkbox" name="q9" value="a">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Preparação Sacolas</span>
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" name="q9" value="b" data-correct="true">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Layout Dlv</span>
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" name="q9" value="c">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Limpeza Seladora</span>
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" name="q9" value="d">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Verificação Menu</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Questão 10 -->
+                <div class="question-card">
+                    <h3 class="question-title">10. Qual processo de treinamento do McDelivery está relacionado ao "Envio no processo do McFlurry - Selagem"?</h3>
+                    <div class="options">
+                        <label class="option">
+                            <input type="checkbox" name="q10" value="a">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Processo de embalagem com fritas</span>
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" name="q10" value="b" data-correct="true">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Reforço do procedimento operacional de bebidas</span>
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" name="q10" value="c">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Montagem de Pedidos</span>
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" name="q10" value="d">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Verificação de Menu</span>
+                        </label>
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="quiz-actions">
+                    <button type="button" class="btn-secondary" onclick="voltarInicio()">
+                        <i class="fas fa-arrow-left"></i>
+                        Voltar ao Início
+                    </button>
+                    <button type="button" class="btn-primary" onclick="verResultado()">
+                        <i class="fas fa-check-circle"></i>
+                        Ver Resultado
+                    </button>
+                </div>
+            </form>
+
+            <div id="resultado" class="resultado" style="display: none;">
+                <div class="resultado-header">
+                    <i class="fas fa-trophy"></i>
+                    <h2>Resultado do Questionário</h2>
+                </div>
+                <div class="pontuacao">
+                    <span class="pontos" id="pontos">0</span>
+                    <span class="total">/ 10</span>
+                </div>
+                <div class="percentual" id="percentual">0%</div>
+                <div class="resultado-actions">
+                    <button type="button" class="btn-secondary" onclick="refazerQuiz()">
+                        <i class="fas fa-redo"></i>
+                        Refazer Quiz
+                    </button>
+                    <button type="button" class="btn-primary" onclick="voltarInicio()">
+                        <i class="fas fa-home"></i>
+                        Voltar ao Início
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="questionario.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Do Méqui</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <h1>Quiz Do Méqui</h1>
+            </div>
+            <nav class="nav">
+            </nav>
+        </header>
+
+        <main class="main-content">
+            <!-- Seção de Login -->
+            <section id="login-section" class="login-section">
+                <div class="login-container">
+                    <h2 class="login-title">Faça seu Login</h2>
+                    <p class="login-description">Entre com suas credenciais para acessar o Quiz Do Méqui</p>
+                    
+                    <form id="login-form" class="login-form">
+                        <div class="form-group">
+                            <label for="username">Usuário:</label>
+                            <input type="text" id="username" name="username" placeholder="Digite seu nome ou 'admin'" required>
+                        </div>
+                        
+                        <div class="form-group" id="password-group" style="display: none;">
+                            <label for="password">Senha:</label>
+                            <input type="password" id="password" name="password" placeholder="Digite sua senha">
+                        </div>
+                        
+                        <button type="submit" class="login-button">
+                            <i class="fas fa-sign-in-alt"></i>
+                            Entrar
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Seção Hero (oculta inicialmente) -->
+            <section id="hero-section" class="hero" style="display: none;">
+                <div class="hero-content">
+                    <h2 class="hero-title">Bem-vindo ao Quiz Do Méqui!</h2>
+                    <p class="hero-description">
+                        Teste seus conhecimentos de forma divertida e rápida.
+                    </p>
+                    <div class="user-info">
+                        <p>Logado como: <span id="current-user"></span></p>
+                        <button class="logout-button" onclick="logout()">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Sair
+                        </button>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button class="cta-button" onclick="iniciarQuestionario()">
+                            <i class="fas fa-play"></i>
+                            Iniciar Questionário
+                        </button>
+                        
+                        <button id="view-results-btn" class="results-button" onclick="visualizarResultados()" style="display: none;">
+                            <i class="fas fa-chart-bar"></i>
+                            Visualizar Resultados
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 Quiz Do Méqui</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
