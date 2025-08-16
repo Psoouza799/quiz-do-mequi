@@ -1,14 +1,153 @@
 // Sistema de Questionário - JavaScript
 
 let currentQuizUser = null;
+let quizQuestions = [];
 
 document.addEventListener('DOMContentLoaded', function() {
     // Verificar se usuário está logado
     checkUserLogin();
     
+    // Carregar perguntas (editadas ou originais)
+    loadQuestions();
+    
     // Inicializar quiz
     initializeQuiz();
 });
+
+function loadQuestions() {
+    // Tentar carregar perguntas editadas do localStorage
+    const perguntasEditadas = localStorage.getItem('perguntasEditadas');
+    
+    if (perguntasEditadas) {
+        try {
+            quizQuestions = JSON.parse(perguntasEditadas);
+            console.log('Perguntas editadas carregadas:', quizQuestions.length);
+        } catch (error) {
+            console.error('Erro ao carregar perguntas editadas:', error);
+            // Fallback para perguntas originais se houver erro
+            loadOriginalQuestions();
+        }
+    } else {
+        // Carregar perguntas originais se não houver editadas
+        loadOriginalQuestions();
+    }
+    
+    // Atualizar interface com as perguntas carregadas
+    updateQuestionsInterface();
+}
+
+function loadOriginalQuestions() {
+    // Perguntas originais como fallback
+    quizQuestions = [
+        {
+            pergunta: "Quais sanduíches foram descontinuados do cardápio do McDonald's?",
+            opcoes: [
+                "Big Mac e Quarter Pounder",
+                "McCrispy Chicken Melt&Bacon e McCrispy Chicken Elite",
+                "McChicken e Filet-O-Fish",
+                "McDouble e Cheeseburger"
+            ],
+            respostaCorreta: 1
+        },
+        {
+            pergunta: "Qual molho exclusivo foi descontinuado junto com os sanduíches McCrispy Chicken?",
+            opcoes: [
+                "Molho Big Mac",
+                "Molho Barbecue",
+                "Molho HoneyFire",
+                "Molho Mostarda e Mel"
+            ],
+            respostaCorreta: 2
+        },
+        {
+            pergunta: "Qual o objetivo do Calendário de Recebimento anual e etiquetas de bolinhas?",
+            opcoes: [
+                "Controlar vendas diárias",
+                "Garantir a identificação correta dos produtos e rotação PEPS",
+                "Organizar horários de funcionários",
+                "Monitorar satisfação do cliente"
+            ],
+            respostaCorreta: 1
+        },
+        {
+            pergunta: "Qual marca de bacon congelado os restaurantes começaram a receber, substituindo a Perdigão?",
+            opcoes: [
+                "Seara",
+                "Sadia",
+                "Aurora",
+                "BRF"
+            ],
+            respostaCorreta: 1
+        },
+        {
+            pergunta: "Quais os tamanhos das fatias de bacon que podem ser encontradas em uma mesma embalagem?",
+            opcoes: [
+                "5cm e 15cm",
+                "10cm e 20cm",
+                "8cm e 16cm",
+                "12cm e 24cm"
+            ],
+            respostaCorreta: 1
+        },
+        {
+            pergunta: "Qual a novidade no processo de envio do McFlurry para McDelivery?",
+            opcoes: [
+                "Embalagem especial",
+                "Todos devem ser enviados selados",
+                "Novo sabor exclusivo",
+                "Desconto especial"
+            ],
+            respostaCorreta: 1
+        },
+        {
+            pergunta: "Qual o primeiro passo para aplicar o material de 'O POTENCIAL EM NOSSO McDELIVERY'?",
+            opcoes: [
+                "Treinar funcionários",
+                "Reunir equipe Gerencial",
+                "Atualizar sistema",
+                "Comprar equipamentos"
+            ],
+            respostaCorreta: 1
+        },
+        {
+            pergunta: "Quais os principais KPIs afetados pela implementação do material McDelivery?",
+            opcoes: [
+                "Vendas, Lucro e Satisfação",
+                "Imprecisão, McExperiência e Vendas",
+                "Tempo, Qualidade e Preço",
+                "Eficiência, Produtividade e Resultado"
+            ],
+            respostaCorreta: 1
+        },
+        {
+            pergunta: "Qual processo está relacionado ao 'Layout Dlv'?",
+            opcoes: [
+                "Organização do estoque",
+                "Posicionamento Reposicionamento Tablet e Função",
+                "Limpeza do restaurante",
+                "Treinamento de funcionários"
+            ],
+            respostaCorreta: 1
+        },
+        {
+            pergunta: "Qual processo de treinamento está relacionado ao McFlurry?",
+            opcoes: [
+                "Atendimento ao cliente",
+                "Reforço do procedimento operacional de bebidas",
+                "Limpeza de equipamentos",
+                "Controle de qualidade"
+            ],
+            respostaCorreta: 1
+        }
+    ];
+    console.log('Perguntas originais carregadas:', quizQuestions.length);
+}
+
+function updateQuestionsInterface() {
+    // Esta função pode ser expandida para atualizar dinamicamente a interface
+    // Por enquanto, apenas registra que as perguntas foram carregadas
+    console.log('Interface atualizada com', quizQuestions.length, 'perguntas');
+}
 
 function checkUserLogin() {
     currentQuizUser = localStorage.getItem('quizUser');

@@ -103,10 +103,13 @@ function showMainInterface() {
     
     // Mostrar botão de resultados apenas para admin
     const viewResultsBtn = document.getElementById('view-results-btn');
+    const editQuestionsBtn = document.getElementById('edit-questions-btn');
     if (isAdmin) {
         viewResultsBtn.style.display = 'flex';
+        editQuestionsBtn.style.display = 'flex';
     } else {
         viewResultsBtn.style.display = 'none';
+        editQuestionsBtn.style.display = 'none';
     }
 }
 
@@ -150,6 +153,16 @@ function visualizarResultados() {
     
     // Redirecionar para a página de resultados
     window.location.href = 'resultados.html';
+}
+
+function editarPerguntas() {
+    if (!isAdmin) {
+        alert('Acesso negado. Apenas administradores podem editar as perguntas.');
+        return;
+    }
+    
+    // Redirecionar para a página de edição de perguntas
+    window.location.href = 'editar-perguntas.html';
 }
 
 // Função para salvar resultado do quiz (será chamada do questionário)

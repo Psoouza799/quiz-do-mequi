@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Perguntas - Quiz Do Méqui</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="editar-perguntas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-edit"></i>
+                <h1>Editar Perguntas - Quiz Do Méqui</h1>
+            </div>
+            <div class="header-actions">
+                <button class="btn-secondary" onclick="voltarInicio()">
+                    <i class="fas fa-home"></i>
+                    Voltar ao Início
+                </button>
+            </div>
+        </header>
+
+        <main class="editor-container">
+            <!-- Instruções -->
+            <section class="instructions-section">
+                <div class="instructions-card">
+                    <h2><i class="fas fa-info-circle"></i> Instruções</h2>
+                    <p>Aqui você pode editar as perguntas e respostas do quiz. Certifique-se de marcar a resposta correta para cada pergunta.</p>
+                    <div class="instructions-actions">
+                        <button class="btn-success" onclick="salvarPerguntas()">
+                            <i class="fas fa-save"></i>
+                            Salvar Alterações
+                        </button>
+                        <button class="btn-warning" onclick="resetarPerguntas()">
+                            <i class="fas fa-undo"></i>
+                            Restaurar Originais
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Editor de Perguntas -->
+            <section class="questions-editor">
+                <div id="questions-container" class="questions-container">
+                    <!-- Perguntas serão inseridas aqui via JavaScript -->
+                </div>
+            </section>
+
+            <!-- Botões de Ação -->
+            <section class="actions-section">
+                <div class="actions-card">
+                    <button class="btn-primary" onclick="adicionarPergunta()">
+                        <i class="fas fa-plus"></i>
+                        Adicionar Nova Pergunta
+                    </button>
+                    <button class="btn-success" onclick="salvarPerguntas()">
+                        <i class="fas fa-save"></i>
+                        Salvar Todas as Alterações
+                    </button>
+                    <button class="btn-danger" onclick="resetarPerguntas()">
+                        <i class="fas fa-trash"></i>
+                        Restaurar Perguntas Originais
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <!-- Modal de Confirmação -->
+        <div id="confirmation-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="modal-title">Confirmar Ação</h3>
+                    <button class="modal-close" onclick="fecharModal()">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p id="modal-message">Tem certeza que deseja realizar esta ação?</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-secondary" onclick="fecharModal()">Cancelar</button>
+                    <button id="modal-confirm-btn" class="btn-primary" onclick="confirmarAcao()">Confirmar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="editar-perguntas.js"></script>
+</body>
+</html>
+
